@@ -9,7 +9,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
         "Vue.js is the best thing since sliced bread!",
         "I love Vue.js, especially when I'm programming!",
         "Vue.js is waaaaay better than Chinese Checkers."
-      ]
+      ],
+      newReview: ""
+    },
+    methods: {
+      addReview: function() {
+        this.reviews.push(this.newReview);
+      }
     }
   });
 });
