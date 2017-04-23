@@ -14,8 +14,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
     methods: {
       addReview: function() {
-        this.reviews.push(this.newReview);
-        this.newReview = "";
+        if (this.newReview !== "") {
+          this.reviews.push(this.newReview);
+          this.newReview = "";
+        }
       }
     }
   });
