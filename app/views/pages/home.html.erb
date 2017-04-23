@@ -3,4 +3,8 @@
   <p>{{ message }}</p>
   <h5>Your name is {{ name }}</h5>
   <input type="text" v-model="name">
+  <h2>Reviews</h2>
+  <ul>
+    <li v-for="review in reviews">{{ review }}</li>
+  </ul>
 </div>
