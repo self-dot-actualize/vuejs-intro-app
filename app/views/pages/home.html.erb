@@ -5,7 +5,7 @@
   <input type="text" v-model="name">
   <h2>Reviews</h2>
   <ul>
-    <li v-for="review in reviews" v-on:click="deleteReview(review)">{{ review }}</li>
+    <li v-for="review in reviews" v-on:click="deleteReview(review)" v-if="isPositive(review)">{{ review }}</li>
   </ul>
   <h4>Add a review!</h4>
   <input type="text" v-model="newReview">

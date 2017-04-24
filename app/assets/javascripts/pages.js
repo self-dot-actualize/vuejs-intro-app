@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         // console.log("deleting review...", inputReview);
         var index = this.reviews.indexOf(inputReview);
         this.reviews.splice(index, 1);
+      },
+      isPositive: function(inputReview) {
+        return inputReview.indexOf("bad") === -1;
       }
     }
   });
