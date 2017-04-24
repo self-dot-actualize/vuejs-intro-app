@@ -5,9 +5,13 @@
   <input type="text" v-model="name">
   <h2>Reviews</h2>
   <ul>
-    <li v-for="review in reviews" v-on:click="deleteReview(review)" v-if="isPositive(review)">{{ review }}</li>
+    <li v-for="review in reviews" v-on:click="deleteReview(review)" v-if="isPositive(review)">
+      <p>Rating: {{ review.rating }} - {{ review.reviewer }}: {{ review.text }}</p>
+    </li>
   </ul>
   <h4>Add a review!</h4>
-  <input type="text" v-model="newReview">
+  Rating: <input type="text" v-model="newReviewRating">
+  Reviewer: <input type="text" v-model="newReviewReviewer">
+  Text: <input type="text" v-model="newReviewText">
   <button v-on:click="addReview()">Add Review</button>
 </div>

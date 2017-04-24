@@ -6,17 +6,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
       message: 'Hello Vue!',
       name: "Peter",
       reviews: [
-        "Vue.js is the best thing since sliced bread!",
-        "I love Vue.js, especially when I'm programming!",
-        "Vue.js is waaaaay better than Chinese Checkers."
+        {text: "Vue.js is the best thing since sliced bread!", rating: 5, reviewer: "Burton Wax"},
+        {text: "I love Vue.js, especially when I'm programming!", rating: 4, reviewer: "Emily Post"},
+        {text: "Vue.js is waaaaay better than Chinese Checkers.", rating: 2, reviewer: "Angela Pearson"}
       ],
-      newReview: ""
+      newReviewText: "",
+      newReviewRating: "",
+      newReviewReviewer: ""
     },
     methods: {
       addReview: function() {
-        if (this.newReview !== "") {
-          this.reviews.push(this.newReview);
-          this.newReview = "";
+        if (this.newReviewText !== "") {
+          this.reviews.push({text: this.newReviewText, rating: this.newReviewRating, reviewer: this.newReviewReviewer});
+          this.newReviewText = "";
+          this.newReviewRating = "";
+          this.newReviewReviewer = "";
         }
       },
       deleteReview: function(inputReview) {
@@ -25,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         this.reviews.splice(index, 1);
       },
       isPositive: function(inputReview) {
-        return inputReview.indexOf("bad") === -1;
+        return inputReview.text.indexOf("bad") === -1;
       }
     }
   });
